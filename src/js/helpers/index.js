@@ -1,6 +1,7 @@
 /* eslint no-console: "off" */
 import helpersModule from 'handlebars-helpers';
 import pages from '../questions/pages';
+import CONSTANTS from '../questions/constants';
 import state from '../globals';
 
 const getPage = i =>
@@ -10,6 +11,10 @@ const getPage = i =>
 const getPages = () =>
   // return true
   pages;
+
+const getHeroes = () =>
+  // return true
+  CONSTANTS.HERO_CARDS;
 
 const getState = () => state;
 
@@ -33,6 +38,7 @@ const register = (Handlebars) => {
     getState,
     getPage,
     getPages,
+    getHeroes,
     debug
   };
 

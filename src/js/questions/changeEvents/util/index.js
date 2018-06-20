@@ -1,6 +1,11 @@
 import $ from 'jquery';
 import { navigateForward, navigateBackward, navigateToAPage } from '../../../navigation';
 
+export const updateHeroes = (data) => {
+  const dataAt65 = data.financialData.find(item => item.age === 65);
+  $('#hero_2 h1').html(`$${Math.round(dataAt65.totalNetworth).toLocaleString()}`);
+};
+
 export const showError = (id, msg) => {
   const $currentElement = $(`#${id}`);
   $currentElement.addClass('has-error');
